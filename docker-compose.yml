@@ -1,6 +1,6 @@
 version: '3'
 services:
-  nginx:
-    image: nginx:latest
+  idade_calculator:
+    image: idade:latest
     ports:
-      - 80:80
+      - 8001:8001
