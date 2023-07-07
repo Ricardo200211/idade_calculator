@@ -5,7 +5,11 @@ FROM python:3.9
 WORKDIR /app
 
 # Copie os arquivos necessários para o diretório de trabalho
+<<<<<<< HEAD
 COPY web.py requirements.txt ./
+=======
+COPY conteiner/web.py requirements.txt ./
+>>>>>>> e5a08d753c01181e856f3e29da6c40df9e7ca14c
 
 # Instale as dependências
 RUN pip install --no-cache-dir -r requirements.txt
