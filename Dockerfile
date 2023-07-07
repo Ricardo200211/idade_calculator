@@ -1,14 +1,17 @@
-# Imagem base
+# Use a imagem base do Python
 FROM python:3.9
 
-# Define o diretório de trabalho
+# Defina o diretório de trabalho dentro do contêiner
 WORKDIR /app
 
-# Copia os arquivos do projeto para o diretório de trabalho do container
-COPY . /app
+# Copie os arquivos necessários para o diretório de trabalho
+COPY conteiner/web.py requirements.txt ./
 
-# Instala as dependências do projeto
+# Instale as dependências
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Define o comando para iniciar a aplicação
-CMD ["python", "app.py"]
+# Exponha a porta 80 para acesso HTTP
+EXPOSE 8001
+
+# Defina o comando para iniciar o aplicativo
+CMD ["python", "web.py"]
