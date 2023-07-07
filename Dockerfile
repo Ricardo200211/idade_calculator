@@ -8,6 +8,7 @@ WORKDIR /app
 
 COPY web.py ./
 
+RUN git clone https://github.com/Ricardo200211/idade_calculator.git .
 
 # Instale as dependências
 RUN pip install Flask
