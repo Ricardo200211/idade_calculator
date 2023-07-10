@@ -6,16 +6,12 @@ WORKDIR /app
 
 # Copie os arquivos necessários para o diretório de trabalho
 
-COPY web.py ./
-
-RUN git clone https://github.com/Ricardo200211/idade_calculator.git .
+COPY . .
 
 # Instale as dependências
-RUN pip install Flask
-RUN python3 -m flask db init && python3 -m flask db migrate && python3 -m flask db upgrade
-
-# Exponha a porta 80 para acesso HTTP
-EXPOSE 80
+RUN apt update
+RUN apt install python3-pip -y
+RUN pip3 install Flask
 
 # Defina o comando para iniciar o aplicativo
-CMD ["python3", "web.py"]
+CMD ["python3", "-m", "id_cal", "run", "--host=0.0.0.0"]
