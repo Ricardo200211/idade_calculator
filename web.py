@@ -33,4 +33,4 @@ def calcular_tempo_vida(data_nascimento):
     return idade_anos, meses_totais, dias_totais, horas
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=3000, debug=True)

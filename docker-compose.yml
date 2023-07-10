@@ -1,6 +1,0 @@
-version: '3'
-services:
-  idade_calculator:
-    image: idade:latest
-    ports:
-      - 8001:8001
